@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html> 
+  <head>
+    <title>Structure of HTML</title>
+  </head>
+
+  <body>
+    Hello, I am Evan <br> 
+    Today I am learning about HTML <br> 
+    HTML : Hyper Text Markup Language <br>
+    HTML is used to create web pages <br>
+    I am enjoying learning HTML <br>
+  </body>
+</html>
