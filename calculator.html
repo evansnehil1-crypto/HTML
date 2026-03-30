@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>JavaScript Variables</h1>
+<p>Sum of statements</p>
+
+<p id="mod"></p>
+<p id="sub"></p>
+<p id="div"></p>
+<p id="mul"></p>
+
+<script>
+
+  var x = 5;
+  var y = 6;
+  var z = x % y;
+  document.getElementById("mod").innerHTML = "The value of z (modulus) is " + z + ".";
+
+  var a = 10;
+  var b = 4;
+  var c = a - b;
+  document.getElementById("sub").innerHTML = "The value of c (subtraction) is " + c + ".";
+
+  var p = 20;
+  var q = 5;
+  var r = p / q;
+  document.getElementById("div").innerHTML = "The value of r (division) is " + r + ".";
+
+
+  var m = 7;
+  var n = 3;
+  var o = m * n;
+  document.getElementById("mul").innerHTML = "The value of o (multiplication) is " + o + ".";
+</script>
+
+</body>
+</html>
