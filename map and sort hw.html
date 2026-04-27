@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Array Map and Sort</title>
+</head>
+<body>
+
+<h2>Multiply and Sort Array</h2>
+<p>array: [12, 33, 7, 54]</p>
+<p>Mapped array (×7):</p>
+<p id="mapped"></p>
+
+<button onclick="ascending()">Ascending order</button>
+<button onclick="descending()">Descending order</button>
+
+<p id="result"></p>
+
+<script>
+  var numbers = [12, 33, 7, 54];
+  function multiplyBySeven(num) {
+    return num * 7;
+  }
+  var mappedArray = numbers.map(multiplyBySeven);
+  document.getElementById("mapped").innerHTML = mappedArray;
+
+  function ascending() {
+    var asc = [...mappedArray].sort(function(a, b) {
+      return a - b;
+    });
+    document.getElementById("result").innerHTML = asc;
+  }
+
+  function descending() {
+    var desc = [...mappedArray].sort(function(a, b) {
+      return b - a;
+    });
+    document.getElementById("result").innerHTML = desc;
+  }
+</script>
+
+</body>
+</html>
