@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>JavaScript Error Handling Project</h2>
+<p id="error_message"></p>
+
+<script>
+try {
+    let number = 42;
+    number.toUpperCase();
+}
+catch(err) {
+    document.getElementById("error_message").innerHTML = err.message;
+}
+</script>
+</body>
+</html>
