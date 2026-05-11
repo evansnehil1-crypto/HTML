@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validation in JS</title>
+    <script>
+        function validateForm() {
+            var x = document.forms["myForm"]["fname"].value;
+            var y = document.getElementById("id1").value;
+            
+            if (x == "" || y == "") {
+                alert("Name/age cannot be empty");
+                return false;
+            }
+            else {
+                alert("Successfully logged in");
+                return true;
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="myForm" onsubmit="return validateForm()">
+        Name: <input type="text" name="fname">
+        Age: <input id="id1" type="number" min="18">
+        <input type="submit" value="Login">
+    </form>
+
+    <p id="message"></p>
+</body>
+</html>
