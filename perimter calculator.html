@@ -1,0 +1,40 @@
+<html>
+    <body>
+        <button onclick="calculator()">Calculator Perimter</button>
+        <script>
+            function calculator(){
+
+            
+            var choice = prompt("Welcome to Perimeter Calculator. \n Please Enter your Choice. \n1 Perimter of Rectangle. \n2 Perimter of Triangle. \n3 Circumference od Circle. \n4.Perimter of Parallelogram");
+
+if (choice == '1') {
+  var l = prompt ('Enter the length')
+  var b = prompt ('Enter the width')
+  var result = Number(l) + Number(b) + Number(l) + Number(b)
+  alert('The Perimeter is ' + result)
+}
+
+if (choice == '2') {
+  var h = prompt ('Enter the height')
+  var b = prompt ('Enter the base')
+    var hy = prompt ('Enter the hypotenuse')
+  var result = Number(h) + Number(b) + Number(hy) 
+  alert('The Perimeter is ' + result)
+}
+
+if (choice == '3') {
+  var r = prompt ('Enter the radius')
+  var result = Number(r) + Number(r) * 3.14
+  alert('The circumference is ' + result)
+}
+
+if (choice == '4') {
+  var h = prompt ('Enter the base')
+  var cb = prompt ('Enter the side')
+  var result = Number(h) + Number(cb) + Number(h) + Number(cb)
+  alert('The Perimeter is ' + result)
+}
+            }
+        </script>
+    </body>
+</html>
