@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>My Site</title>
+
+<style>
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(to right, #50a2f0, #7ed188);
+}
+
+/* NAVBAR */
+.topnav {
+  overflow: hidden;
+  background-color: #50a2f0;
+}
+
+.topnav a {
+  float: left;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #a3a010;
+  font-weight: bold;
+}
+
+.topnav a.active {
+  background-color: #7ed188;
+  font-weight: bold;
+}
+
+/* CAROUSEL */
+.carousel {
+  width: 80%;
+  max-width: 700px;
+  height: 350px;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* SLIDES */
+.slides {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  width: 700px;
+  height: 350px;
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* BUTTONS */
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+#prev { left: 10px; }
+#next { right: 10px; }
+
+</style>
+
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="topnav">
+  <a class="active" href="evans site.html">Home</a>
+  <a href="explorer.html">Explore</a>
+  <a href="friends.html">Friends</a>
+  <a href="upload.html">Upload</a>
+  <a href="sign up.html">Sign up</a>
+</div>
+
+<!-- CAROUSEL -->
+<div class="carousel">
+
+  <div class="slides" id="slides">
+
+    <!-- 👇 CHANGE THESE FILE NAMES TO YOUR IMAGES -->
+    <div class="slide">
+      <img src="image1.jpg">
+    </div>
+
+    <div class="slide">
+      <img src="image2.jpg">
+    </div>
+
+    <div class="slide">
+      <img src="image3.jpg">
+    </div>
+
+  </div>
+
+  <button class="btn" id="prev" onclick="move(-1)">❮</button>
+  <button class="btn" id="next" onclick="move(1)">❯</button>
+
+</div>
+
+<script>
+let index = 0;
+
+function move(dir) {
+  const slides = document.getElementById("slides");
+  const total = 3;
+
+  index += dir;
+
+  if (index < 0) index = total - 1;
+  if (index > total - 1) index = 0;
+
+  slides.style.transform = `translateX(${-index * 700}px)`;
+}
+</script>
+
+</body>
+</html>
