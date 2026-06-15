@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>Navbar</title>
+
+<style>
+
+body {
+
+margin: 0;
+
+font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.topnav {
+
+overflow: hidden;
+
+background-color: #50a2f0;
+
+}
+
+.topnav a {
+
+float: left;
+
+color: #000000;
+
+text-align: center;
+
+padding: 14px 16px;
+
+text-decoration: none;
+
+font-size: 17px;
+
+}
+
+.topnav a:hover {
+
+background-color: #ddd;
+
+color: black;
+
+}
+
+.topnav a.active {
+
+background-color: #7ed188;
+
+color: black;
+
+font-weight: bold;
+
+}
+
+body {
+
+margin: 0;
+
+font-family: Arial, Helvetica, sans-serif;
+
+background: linear-gradient(to right, #50a2f0, #7ed188);
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="topnav">
+
+<a href="evans site.html">Home</a>
+
+<a href="explorer.html">Explore</a>
+
+<a class="active"  href="friends.html">Friends</a>
+
+<a href="upload.html"> + Upload</a>
+
+
+
+</div>
+
+</body>
+
+</html>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Friends</title>
+</head>
+
+<body>
+
+<h1>Friends Section</h1>
+
+<fieldset>
+
+<legend>Your Friends</legend>
+
+<p>👤 <a href="caleb.html">Caleb Tembo</a> <button onclick="removeFriend(this)">Remove</button></p>
+<p>👤 <a href="matamando.html">Matamando Matupa</a> <button onclick="removeFriend(this)">Remove</button></p>
+<p>👤 <a href="alex.html">Alex Brown</a> <button onclick="removeFriend(this)">Remove</button></p>
+
+</fieldset>
+
+<br><br>
+
+<fieldset>
+
+<legend>Add Friend</legend>
+
+<form id="friendForm">
+
+<label>Name:</label><br>
+<input type="text" id="name"><br><br>
+
+<label>Username:</label><br>
+<input type="text" id="username"><br><br>
+
+<input type="submit" value="Add Friend">
+
+</form>
+
+</fieldset>
+
+<br><br>
+
+<fieldset>
+
+<legend>Sent Friend Requests</legend>
+
+<div id="sentList"></div>
+
+</fieldset>
+
+<p id="message"></p>
+
+<script>
+document.getElementById("friendForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let name = document.getElementById("name").value;
+    let username = document.getElementById("username").value;
+
+    if (name.trim() === "" || username.trim() === "") return;
+
+    let sentList = document.getElementById("sentList");
+
+    let item = document.createElement("p");
+
+    item.innerHTML =
+        `👤 <a href="profile.html?name=${encodeURIComponent(name)}&username=${encodeURIComponent(username)}">
+        ${name}
+        </a> (@${username})
+        <button onclick="removeRequest(this)">Cancel</button>`;
+
+    sentList.appendChild(item);
+
+    document.getElementById("message").textContent = "Friend request sent successfully!";
+
+    document.getElementById("name").value = "";
+    document.getElementById("username").value = "";
+});
+</script>
+</body>
+</html>
